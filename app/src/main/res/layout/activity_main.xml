@@ -6,12 +6,15 @@
     android:orientation="vertical"
     android:padding="15sp">
 
+    <!-- USA EL ATRIBUTO android:labelFor PARA INDICA QUE EL TextView ACTÚA COMO LABEL
+         DE UN DETERMINADO EditText. -->
     <TextView
         android:id="@+id/amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/amount" />
 
+    <!-- android:focusByDefautl SOLO VALE A PARTIR DE LA API 26 -->
     <EditText
         android:id="@+id/txtAmount"
         android:layout_width="match_parent"
@@ -22,7 +25,8 @@
         android:selectAllOnFocus="true"
         android:text="@string/initialAmount" />
 
-
+    <!-- NO USES LITERALES DE CANTIDAD COMO 15dp. DEFINE RECURSOS DE DIMENSIÓN.
+         LA UNIDAD sp SOLO ES PARA TAMAÑOS DE TEXTO. PARA EL RESTO USA dp -->
     <TextView
         android:id="@+id/from"
         android:layout_width="match_parent"
@@ -38,6 +42,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <!-- USA LOS ATRIBUTOS ...End EN VEZ DE ...Right Y ...Start EN VEZ DE ...Left -->
         <RadioButton
             android:id="@+id/rbFromDollar"
             android:layout_width="wrap_content"
@@ -65,7 +70,7 @@
             android:id="@+id/imgFrom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_euro_symbol"/>
+            android:src="@drawable/ic_euro"/>
 
     </RadioGroup>
 
@@ -112,17 +117,17 @@
             android:id="@+id/imgTo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_american_dollar_symbol"/>
+            android:src="@drawable/ic_dollar"/>
 
     </RadioGroup>
 
-
+    <!-- NORMALMENTE NO SE DEFINEN LOS VALORES DE LOS RECURSOS DE CADENA EN MAYÚSCULAS. SI QUIERES
+         FORZAR A QUE APAREZCA EN MAYÚSCULAS USA EL ATRIBUTO android:textAllCaps -->
     <Button
         android:id="@+id/btnExchange"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15sp"
         android:text="@string/exchange" />
-
 
 </LinearLayout>
